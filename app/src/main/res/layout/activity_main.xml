@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Company Name -->
+    <TextView
+        android:id="@+id/company_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PT XYZ"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Location -->
+    <RelativeLayout
+        android:id="@+id/location_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/company_name"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/location_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_location_on_24"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="8dp"/>
+
+        <TextView
+            android:id="@+id/location_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sleman"
+            android:textSize="16sp"
+            android:layout_toRightOf="@id/location_icon"/>
+    </RelativeLayout>
+
+    <!-- Information Card -->
+    <RelativeLayout
+        android:id="@+id/information_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:layout_below="@id/location_layout"
+        android:layout_marginTop="16dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/information_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Informasi perubahan data katalog"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"/>
+
+        <RelativeLayout
+            android:id="@+id/last_update_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/information_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/last_update_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pembaruan terakhir: "
+                android:textSize="14sp"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/last_update_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16-06-2022 15:00:01"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/last_update_label"
+                android:textColor="@color/orange"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/next_update_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/last_update_container"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/next_update_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pembaruan selanjutnya: "
+                android:textSize="14sp"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/next_update_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17-06-2022 15:00:01"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/next_update_label"
+                android:textColor="@color/orange"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!-- Grid of Buttons -->
+    <GridLayout
+        android:id="@+id/button_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/information_card"
+        android:layout_marginTop="32dp"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:layout_marginBottom="16dp">
+
+        <!-- Katalog Tender Button -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:background="@drawable/button_background"
+            android:padding="16dp"
+            android:elevation="4dp"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/baseline_manage_search_24"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Katalog Tender"
+                android:textSize="16sp"
+                android:layout_below="@id/search"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"/>
+        </RelativeLayout>
+
+        <!-- Tender Tersimpan Button -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:background="@drawable/button_background"
+            android:padding="16dp"
+            android:elevation="4dp"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/simpan"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/baseline_bookmark_added_24"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tender Tersimpan"
+                android:textSize="16sp"
+                android:layout_below="@+id/simpan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"/>
+        </RelativeLayout>
+
+        <!-- Laporan Statistik Button -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:background="@drawable/button_background"
+            android:padding="16dp"
+            android:elevation="4dp"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/chart"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/baseline_insert_chart_24"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laporan Statistik"
+                android:textSize="16sp"
+                android:layout_below="@id/chart"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"/>
+        </RelativeLayout>
+
+        <!-- Pengaturan Button -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:background="@drawable/button_background"
+            android:padding="16dp"
+            android:elevation="4dp"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/setting"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/baseline_settings_24"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengaturan"
+                android:textSize="16sp"
+                android:layout_below="@id/setting"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"/>
+        </RelativeLayout>
+    </GridLayout>
+
+</RelativeLayout>
